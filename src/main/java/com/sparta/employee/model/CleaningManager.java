@@ -1,13 +1,15 @@
 package com.sparta.employee;
 
+import com.sparta.employee.view.EmployeeDriver;
+
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 
-public class CleaningManager extends EmployeeDriver{
+public class CleaningManager extends EmployeeDriver {
     ArrayList<String> allEmployees = new ArrayList<String>();
-    ArrayList<String> employeesDuplicates = new ArrayList<String>();
+    public ArrayList<String> employeesDuplicates = new ArrayList<String>();
     String line = null;
     int dupeCount = 0;
 

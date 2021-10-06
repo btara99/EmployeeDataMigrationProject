@@ -1,10 +1,5 @@
 package com.sparta.employee;
 
-import java.io.*;
-import java.sql.Date;
-import java.sql.SQLOutput;
-import java.util.*;
-
 public class EmployeeDriver {
 
     public static void main(String[] args) {
