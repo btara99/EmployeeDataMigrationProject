@@ -4,7 +4,7 @@ import java.sql.*;
 
 public class JDBCManager {
     Connection conn = null;
-
+//MAKE A CLASS MAYBE THAT CREATS TABLE THEN 1 THEN WRITES IT TO A TABLE AND CALL IT IN THIS CLASS
     public void databaseHandling(){
         try(Connection conn = DriverManager.getConnection("jdbc:sqlite:employees.db") ){
             Statement statement = conn.createStatement();
