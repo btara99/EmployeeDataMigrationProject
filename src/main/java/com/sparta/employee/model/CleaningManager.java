@@ -1,4 +1,4 @@
-package com.sparta.employee;
+package com.sparta.employee.model;
 
 import com.sparta.employee.view.EmployeeDriver;
 
@@ -8,7 +8,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 public class CleaningManager extends EmployeeDriver {
-    ArrayList<String> allEmployees = new ArrayList<String>();
+    public ArrayList<String> allEmployees = new ArrayList<String>();
     public ArrayList<String> employeesDuplicates = new ArrayList<String>();
     String line = null;
     int dupeCount = 0;
@@ -19,7 +19,7 @@ public class CleaningManager extends EmployeeDriver {
             while ((line = in.readLine()) != null) {
                 allEmployees.add(line);
             }
-            //Used for removing any duplicate values
+            //Used for removing any duplicate values by iterating through the array list and comparing
             for (int i = 1; i < allEmployees.size(); i++) {
                 for (int j = i + 1; j < allEmployees.size(); j++) {
                     if (allEmployees.get(i).substring(0, 6).equals(allEmployees.get(j).substring(0, 6))) {
@@ -29,7 +29,8 @@ public class CleaningManager extends EmployeeDriver {
                     }
                 }
             }
-            //GO THROUGH ARRAY OF ALL EMPLOYEESS AND COMPARE SUBTREING OF EMPLOYYE ID
+
+
         } catch (IOException e) {
             e.printStackTrace();
         }

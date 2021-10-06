@@ -1,4 +1,4 @@
-package com.sparta.employee;
+package com.sparta.employee.controller;
 
 import java.sql.Date;
 
