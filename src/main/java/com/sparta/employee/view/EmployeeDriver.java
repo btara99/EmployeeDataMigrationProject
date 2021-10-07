@@ -8,13 +8,12 @@ public class EmployeeDriver {
 
     public static void main(String[] args) {
         CleaningManager cleaningManager = new CleaningManager();
-        EmployeeDisplay employeeDisplay = new EmployeeDisplay();
-        JDBCManager jbdcManager = new JDBCManager();
-
+//        EmployeeDisplay employeeDisplay = new EmployeeDisplay();
+//        JDBCManager jbdcManager = new JDBCManager();
+//
         cleaningManager.fileCleaner();
-        employeeDisplay.displayDataProcessing(cleaningManager.employeesDuplicates.size(),cleaningManager.allEmployees.size());
-
-        jbdcManager.databaseHandling();
+//        employeeDisplay.displayDataProcessing(cleaningManager.employeesDuplicates.size(),cleaningManager.allEmployees.size());
+//        jbdcManager.databaseHandling();
 
     }
 }
