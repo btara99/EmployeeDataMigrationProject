@@ -12,16 +12,16 @@ import java.util.HashSet;
 
 public class CleaningManager extends EmployeeDriver {
 
-
     public ArrayList<EmployeeInfo> employeesUnique = new ArrayList<EmployeeInfo>();
     public ArrayList<EmployeeInfo> employeesDuplicates = new ArrayList<EmployeeInfo>();
     public HashSet<Integer> idCheck = new HashSet<Integer>(); // Hashset cannot contain dupes
-    String line = null;
-    int dupeCount = 0;
+    String line = null; // initiates line
+
 
     public void fileCleaner(){
         try (BufferedReader in = new BufferedReader(new FileReader("EmployeeRecords.csv"))) {
             in.readLine(); // skips the first line
+            double startTime = System.nanoTime(); // starts the timer for data processing
             while ((line = in.readLine()) != null) {
                 try{
                     EmployeeInfo employeeInfo = EmployeeProcessing.createEmployeeRow(line);
@@ -40,8 +40,10 @@ public class CleaningManager extends EmployeeDriver {
                     System.out.println("Employee was not checked " + line);
                 }
             }
-            System.out.println(employeesUnique.size());
-            System.out.println(employeesDuplicates.size());
+            double finalTime = (System.nanoTime() - startTime)/1000000000;
+            System.out.println("The number of unique entries: "+employeesUnique.size());
+            System.out.println("The number of duplicate entries: "+employeesDuplicates.size());
+            System.out.println("Time Taken to process: " + finalTime + " seconds");
 
 
         } catch (FileNotFoundException fe){
@@ -54,31 +56,6 @@ public class CleaningManager extends EmployeeDriver {
         }
     }
 
-//    public void fileCleaner() {
-//
-//        try (BufferedReader in = new BufferedReader(new FileReader("EmployeeRecords.csv"))) {
-//            while ((line = in.readLine()) != null) {
-//                allEmployees.add(line);
-//            }
-//            //Used for removing any duplicate values by iterating through the array list and comparing
-//            for (int i = 1; i < allEmployees.size(); i++) {
-//                for (int j = i + 1; j < allEmployees.size(); j++) {
-//                    if (allEmployees.get(i).substring(0, 6).equals(allEmployees.get(j).substring(0, 6))) {
-//                        dupeCount += 1;
-//                        employeesDuplicates.add(allEmployees.get(i));
-//                        allEmployees.remove(i);
-//                    }
-//                }
-//            }
-//
-//        } catch (FileNotFoundException fe){
-//            fe.printStackTrace();
-//            System.out.println("File is not found");
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//            System.out.println("Input output exception");
-//
-//        }
-//    }
+
 
 }

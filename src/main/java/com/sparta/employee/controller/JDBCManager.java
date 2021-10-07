@@ -11,7 +11,7 @@ public class JDBCManager {
                     "(EmpID int, Name_Prefix varchar(255)," +
                     "First_Name varchar(255), Middle_Initial " +
                     "varchar(255), Last_Name varchar(255)," +
-                    "Gender varchar(1),Email varchar(255)," +
+                    "Gender varchar(2),Email varchar(255)," +
                     "DOB Date, DOJ Date, Salary INT(1000))");
 
             statement.close();
