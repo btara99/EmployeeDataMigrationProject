@@ -3,6 +3,7 @@ package com.sparta.employee.model;
 import com.sparta.employee.view.EmployeeDriver;
 
 import java.io.BufferedReader;
+import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -31,8 +32,13 @@ public class CleaningManager extends EmployeeDriver {
             }
 
 
+        } catch (FileNotFoundException fe){
+            fe.printStackTrace();
+            System.out.println("File is not found");
         } catch (IOException e) {
             e.printStackTrace();
+            System.out.println("Input output exception");
+
         }
     }
 

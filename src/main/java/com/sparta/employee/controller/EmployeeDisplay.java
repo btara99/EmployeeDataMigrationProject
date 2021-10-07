@@ -6,7 +6,7 @@ public class EmployeeDisplay {
 
     public void displayDataProcessing(int dupeVal,int cleanVal){
         System.out.println("The amount of duplicate values found in the file: "+ dupeVal);
-        System.out.println("The amount of Unique values found int he file: " + cleanVal);
+        System.out.println("The amount of Unique values found in the file: " + cleanVal);
 
     }
 }
