@@ -8,12 +8,14 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashSet;
 
 public class CleaningManager extends EmployeeDriver {
 
 
-    public ArrayList<EmployeeInfo> allEmployees = new ArrayList<EmployeeInfo>();
+    public ArrayList<EmployeeInfo> employeesUnique = new ArrayList<EmployeeInfo>();
     public ArrayList<EmployeeInfo> employeesDuplicates = new ArrayList<EmployeeInfo>();
+    public HashSet<Integer> idCheck = new HashSet<Integer>(); // Hashset cannot contain dupes
     String line = null;
     int dupeCount = 0;
 
@@ -23,12 +25,23 @@ public class CleaningManager extends EmployeeDriver {
             while ((line = in.readLine()) != null) {
                 try{
                     EmployeeInfo employeeInfo = EmployeeProcessing.createEmployeeRow(line);
-                    System.out.println(employeeInfo);
+                    int currId = employeeInfo.getEmployeeID();
+                    if(idCheck.add(currId) == false){
+                        employeesDuplicates.add(employeeInfo);
+                    }
+                    else{
+                        employeesUnique.add(employeeInfo);
+                    }
+
 
                 } catch (Exception exception) {
-                    exception.printStackTrace();
+                    //exception.printStackTrace();
+                    //ADD LOGGER HERE
+                    System.out.println("Employee was not checked " + line);
                 }
             }
+            System.out.println(employeesUnique.size());
+            System.out.println(employeesDuplicates.size());
 
 
         } catch (FileNotFoundException fe){
