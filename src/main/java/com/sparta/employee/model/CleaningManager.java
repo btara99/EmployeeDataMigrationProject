@@ -7,10 +7,8 @@ import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.HashSet;
 
-public class CleaningManager extends EmployeeDriver {
+public class CleaningManager extends EmployeeDriver implements Runnable {
 
     String line = null; // initiates line
 
@@ -56,4 +54,8 @@ public class CleaningManager extends EmployeeDriver {
     }
 
 
+    @Override
+    public void run() {
+        fileCleaner();
+    }
 }
