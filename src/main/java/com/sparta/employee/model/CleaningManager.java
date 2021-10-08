@@ -12,14 +12,10 @@ import java.util.HashSet;
 
 public class CleaningManager extends EmployeeDriver {
 
-    public ArrayList<EmployeeInfo> employeesUnique = new ArrayList<EmployeeInfo>();
-    public ArrayList<EmployeeInfo> employeesDuplicates = new ArrayList<EmployeeInfo>();
-    public HashSet<Integer> idCheck = new HashSet<Integer>(); // Hashset cannot contain dupes
     String line = null; // initiates line
 
-
     public void fileCleaner(){
-        try (BufferedReader in = new BufferedReader(new FileReader("EmployeeRecords.csv"))) {
+        try (BufferedReader in = new BufferedReader(new FileReader("EmployeeRecordsLarge.csv"))) {
             in.readLine(); // skips the first line
             double startTime = System.nanoTime(); // starts the timer for data processing
             while ((line = in.readLine()) != null) {
@@ -58,7 +54,6 @@ public class CleaningManager extends EmployeeDriver {
 
         }
     }
-
 
 
 }

@@ -2,7 +2,7 @@ package com.sparta.employee.controller;
 
 import java.sql.Date;
 
-public class EmployeeInfo {
+public class EmployeeInfo extends JDBCManager {
     private int employeeID;
     private String namePrefix;
     private String firstName;
