@@ -12,8 +12,7 @@ public class EmployeeDriver {
         JDBCManager jbdcManager = new JDBCManager();
 
         cleaningManager.fileCleaner();
-//        employeeDisplay.displayDataProcessing(cleaningManager.employeesDuplicates.size(),cleaningManager.allEmployees.size());
-//        jbdcManager.databaseHandling();
+        jbdcManager.databaseHandling();
 
     }
 }

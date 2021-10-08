@@ -27,6 +27,7 @@ public class EmployeeProcessing {
 
     }
 
+    //Converts the date from a string to java.sql format
     public static Date dateFormater(String date) throws ParseException  {
         java.util.Date stringDate = new SimpleDateFormat("MM/dd/yyyy").parse(date);
         java.sql.Date dateFormatted = new java.sql.Date(stringDate.getTime());

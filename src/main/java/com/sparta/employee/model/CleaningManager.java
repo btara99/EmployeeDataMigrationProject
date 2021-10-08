@@ -34,7 +34,6 @@ public class CleaningManager extends EmployeeDriver {
 
                     }
 
-
                 } catch (Exception exception) {
                     //exception.printStackTrace();
                     //ADD LOGGER HERE
@@ -42,17 +41,19 @@ public class CleaningManager extends EmployeeDriver {
                 }
             }
             double finalTime = (System.nanoTime() - startTime)/1000000000;
-            System.out.println("The number of unique entries: "+employeesUnique.size());
-            System.out.println("The number of duplicate entries: "+employeesDuplicates.size());
+            System.out.println("The number of unique entries: "+ employeesUnique.size());
+            System.out.println("The number of duplicate entries: "+ employeesDuplicates.size());
             System.out.println("Time Taken to process: " + finalTime + " seconds");
-            System.out.println(employeesUnique.get(1));
+            //ADD LOGGER HERE
 
 
         } catch (FileNotFoundException fe){
             fe.printStackTrace();
+            //add logger here
             System.out.println("File is not found");
         } catch (IOException e) {
             e.printStackTrace();
+            //add logger here
             System.out.println("Input output exception");
 
         }
