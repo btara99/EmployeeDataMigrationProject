@@ -31,6 +31,7 @@ public class CleaningManager extends EmployeeDriver {
                     }
                     else{
                         employeesUnique.add(employeeInfo);
+
                     }
 
 
@@ -44,6 +45,7 @@ public class CleaningManager extends EmployeeDriver {
             System.out.println("The number of unique entries: "+employeesUnique.size());
             System.out.println("The number of duplicate entries: "+employeesDuplicates.size());
             System.out.println("Time Taken to process: " + finalTime + " seconds");
+            System.out.println(employeesUnique.get(1));
 
 
         } catch (FileNotFoundException fe){

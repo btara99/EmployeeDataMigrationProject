@@ -8,7 +8,7 @@ import java.text.SimpleDateFormat;
 
 public class EmployeeProcessing {
 
-    public static EmployeeInfo createEmployeeRow(String employeeRow)  {
+    public static EmployeeInfo createEmployeeRow(String employeeRow) throws ParseException {
 
         String[] rowValue = employeeRow.split(",");
 
@@ -27,13 +27,9 @@ public class EmployeeProcessing {
 
     }
 
-    public static Date dateFormater(String date)  { //ADD A TEST FOR THIS
-            String[] dateSplit = date.split("/");
-            int Day = Integer.parseInt(dateSplit[1]);
-            int Month = Integer.parseInt(dateSplit[0]);
-            int Year = Integer.parseInt(dateSplit[2]);
-
-            Date dateFormatted = Date.valueOf(String.format("%d-%02d-%02d",Year,Month,Day));
+    public static Date dateFormater(String date) throws ParseException  {
+        java.util.Date stringDate = new SimpleDateFormat("MM/dd/yyyy").parse(date);
+        java.sql.Date dateFormatted = new java.sql.Date(stringDate.getTime());
 
             return  dateFormatted;
     }
