@@ -23,7 +23,7 @@ public class EmployeeDriver {
         Thread t2 = new Thread(jbdcManager);
         t2.start();
 
-        cleaningManager.fileCleaner();
+        //cleaningManager.fileCleaner();
         //jbdcManager.databaseHandling();
 
 

@@ -12,7 +12,7 @@ public class CleaningManager extends EmployeeDriver implements Runnable {
 
     String line = null; // initiates line
 
-    public void fileCleaner(){
+    public synchronized void fileCleaner(){
         try (BufferedReader in = new BufferedReader(new FileReader("EmployeeRecordsLarge.csv"))) {
             in.readLine(); // skips the first line
             double startTime = System.nanoTime(); // starts the timer for data processing

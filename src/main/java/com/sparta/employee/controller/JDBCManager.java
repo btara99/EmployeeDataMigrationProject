@@ -8,7 +8,7 @@ import java.sql.*;
 public class JDBCManager extends EmployeeDriver implements Runnable {
 
     CleaningManager cleaningManager = new CleaningManager();
-    public void databaseHandling(){
+    public synchronized void databaseHandling(){
         try(Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/myemployees","root","Password321@") ){
 
             Statement statement = conn.createStatement();
