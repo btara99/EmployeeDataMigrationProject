@@ -1,1 +1,25 @@
-[WARN] 2021-10-09 19:25:57,409 Java sorter app logger timeLogForCleaning time taken for single thread completion 0.4650303 seconds
+
+[WARN] 2021-10-09 19:57:00,597 Java sorter app logger timeLogForCleaning time taken for single thread completion 0.4204159 seconds
+[WARN] 2021-10-09 19:57:10,596 Java sorter app logger timeLog time taken for single thread completion 9.5092648 seconds
+[WARN] 2021-10-09 19:57:10,888 Java sorter app logger timeLogForCleaning time taken for single thread completion 0.2891999 seconds
+[WARN] 2021-10-09 19:57:16,856 Java sorter app logger timeLogMultiThread time taken for multi thread completion 5.8709308 seconds
+[WARN] 2021-10-09 19:58:18,862 Java sorter app logger timeLogForCleaning time taken for single thread completion 0.4173475 seconds
+[WARN] 2021-10-09 19:58:24,839 Java sorter app logger timeLogMultiThread time taken for multi thread completion 5.5552324 seconds
+[WARN] 2021-10-09 19:58:59,773 Java sorter app logger timeLogForCleaning time taken for single thread completion 0.3791029 seconds
+[WARN] 2021-10-09 19:59:09,686 Java sorter app logger timeLog time taken for single thread completion 9.4648307 seconds
+[WARN] 2021-10-09 19:59:09,965 Java sorter app logger timeLogForCleaning time taken for single thread completion 0.2755058 seconds
+[WARN] 2021-10-09 19:59:15,541 Java sorter app logger timeLogMultiThread time taken for multi thread completion 5.4662612 seconds
+[WARN] 2021-10-09 20:02:07,347 Java sorter app logger timeLogForCleaning time taken for single thread completion 0.4089097 seconds
+[WARN] 2021-10-09 20:02:17,453 Java sorter app logger timeLog time taken for single thread completion 9.6422909 seconds
+[WARN] 2021-10-09 20:02:28,702 Java sorter app logger timeLogForCleaning time taken for single thread completion 0.393868 seconds
+[WARN] 2021-10-09 20:02:34,861 Java sorter app logger timeLogMultiThread time taken for multi thread completion 5.7698768 seconds
+[WARN] 2021-10-09 20:12:04,822 Java sorter app logger timeLogForCleaning time taken for single thread completion 0.4041631 seconds
+[WARN] 2021-10-09 20:12:15,533 Java sorter app logger timeLog time taken for single thread completion 10.2020955 seconds
+[WARN] 2021-10-09 20:12:21,518 Java sorter app logger timeLogForCleaning time taken for single thread completion 0.4152354 seconds
+[WARN] 2021-10-09 20:12:27,591 Java sorter app logger timeLogMultiThread time taken for multi thread completion 5.6687037 seconds
+[WARN] 2021-10-09 20:13:50,023 Java sorter app logger timeLogForCleaning time taken for single thread completion 0.3987022 seconds
+[WARN] 2021-10-09 20:13:55,929 Java sorter app logger timeLogMultiThread time taken for multi thread completion 5.5113685 seconds
+[WARN] 2021-10-09 20:19:15,824 Java sorter app logger timeLogForCleaning time taken for single thread completion 0.391064 seconds
+[WARN] 2021-10-09 20:19:25,528 Java sorter app logger timeLog time taken for single thread completion 9.2465884 seconds
+[WARN] 2021-10-09 20:20:24,132 Java sorter app logger timeLogForCleaning time taken for single thread completion 0.4000162 seconds
+[WARN] 2021-10-09 20:20:30,057 Java sorter app logger timeLogMultiThread time taken for multi thread completion 5.5266256 seconds
