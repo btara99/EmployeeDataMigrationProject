@@ -1,8 +1,8 @@
-package com.sparta.employee.controller;
+package com.sparta.employee.model;
 
 import java.sql.Date;
 
-public class EmployeeInfo {
+public class EmployeeDAOInfo {
     private int employeeID;
     private String namePrefix;
     private String firstName;
@@ -14,7 +14,7 @@ public class EmployeeInfo {
     private Date dateOfJoin;
     private int salary;
 
-    public EmployeeInfo(int employeeID, String namePrefix, String firstName, String midInitial, String lastName, String gender, String eMail, Date dateOfBirth, Date dateOfJoin, int salary) {
+    public EmployeeDAOInfo(int employeeID, String namePrefix, String firstName, String midInitial, String lastName, String gender, String eMail, Date dateOfBirth, Date dateOfJoin, int salary) {
         this.employeeID = employeeID;
         this.namePrefix = namePrefix;
         this.firstName = firstName;
@@ -109,7 +109,7 @@ public class EmployeeInfo {
 
     @Override
     public String toString() {
-        return "EmployeeInfo{" +
+        return "EmployeeDAOInfo{" +
                 "employeeID=" + employeeID +
                 ", namePrefix='" + namePrefix + '\'' +
                 ", firstName='" + firstName + '\'' +

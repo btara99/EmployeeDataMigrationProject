@@ -1,10 +1,9 @@
-package com.sparta.employee.controller;
+package com.sparta.employee.controller.JDBCMultiThread;
 
-import com.sparta.employee.controller.EmployeeInfo;
+import com.sparta.employee.model.EmployeeDAOInfo;
 import com.sparta.employee.view.EmployeeDriver;
 
 import java.sql.*;
-import java.util.ArrayList;
 
 public class JDBCMultiThreadInsert2 extends EmployeeDriver implements Runnable{
 
@@ -17,7 +16,7 @@ public class JDBCMultiThreadInsert2 extends EmployeeDriver implements Runnable{
                         "Last_Name,Gender,Email,DOB,DOJ,Salary)VALUES (?,?,?,?,?,?,?,?,?,?)");
 
 
-                for (EmployeeInfo it : employeesUniqueSplit2) {  // Stores the values into the DB
+                for (EmployeeDAOInfo it : employeesUniqueSplit2) {  // Stores the values into the DB
                     preparedStatement.setInt(1, it.getEmployeeID());
                     preparedStatement.setString(2, it.getNamePrefix());
                     preparedStatement.setString(3, it.getFirstName());

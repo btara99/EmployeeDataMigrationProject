@@ -1,11 +1,11 @@
-package com.sparta.employee.controller;
+package com.sparta.employee.controller.JDBCMultiThread;
 
 import com.sparta.employee.model.CleaningManager;
 import com.sparta.employee.view.EmployeeDriver;
 
 import java.sql.*;
 
-public class JDBCMangerMultiThread extends EmployeeDriver implements Runnable {
+public class JDBCMultiThreadTableHandle extends EmployeeDriver implements Runnable {
     CleaningManager cleaningManager = new CleaningManager();
 
     public synchronized void databaseHandling() {

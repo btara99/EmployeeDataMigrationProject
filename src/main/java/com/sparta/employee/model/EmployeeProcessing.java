@@ -1,7 +1,5 @@
 package com.sparta.employee.model;
 
-import com.sparta.employee.controller.EmployeeInfo;
-
 import java.sql.Date;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -9,7 +7,7 @@ import java.text.SimpleDateFormat;
 public class EmployeeProcessing {
 
 
-    public static EmployeeInfo createEmployeeRow(String employeeRow) throws ParseException {
+    public static EmployeeDAOInfo createEmployeeRow(String employeeRow) throws ParseException {
 
         String[] rowValue = employeeRow.split(",");
 
@@ -24,7 +22,7 @@ public class EmployeeProcessing {
         Date dateOfJoin = dateFormater(rowValue[8]);// converts the date from a string to an SQL date obj
         int salary = Integer.parseInt(rowValue[9]);// converts the salary as an int
 
-        return new EmployeeInfo(employeeID,namePrefix,firstName,midInitial,lastname,gender,eMail,dateOfBirth,dateOfJoin,salary);
+        return new EmployeeDAOInfo(employeeID,namePrefix,firstName,midInitial,lastname,gender,eMail,dateOfBirth,dateOfJoin,salary);
 
     }
 

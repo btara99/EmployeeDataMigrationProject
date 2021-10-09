@@ -1,6 +1,5 @@
 package com.sparta.employee.model;
 
-import com.sparta.employee.controller.EmployeeInfo;
 import com.sparta.employee.view.EmployeeDriver;
 
 import java.io.BufferedReader;
@@ -18,7 +17,7 @@ public class CleaningManager extends EmployeeDriver implements Runnable {
             double startTime = System.nanoTime(); // starts the timer for data processing
             while ((line = in.readLine()) != null) {
                 try{
-                    EmployeeInfo employeeInfo = EmployeeProcessing.createEmployeeRow(line);
+                    EmployeeDAOInfo employeeInfo = EmployeeProcessing.createEmployeeRow(line);
                     int currId = employeeInfo.getEmployeeID();
                     if(idCheck.add(currId) == false){
                         employeesDuplicates.add(employeeInfo);

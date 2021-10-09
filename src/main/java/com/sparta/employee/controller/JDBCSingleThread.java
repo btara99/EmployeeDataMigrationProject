@@ -1,6 +1,7 @@
 package com.sparta.employee.controller;
 
 import com.sparta.employee.model.CleaningManager;
+import com.sparta.employee.model.EmployeeDAOInfo;
 import com.sparta.employee.view.EmployeeDriver;
 
 import java.sql.*;
@@ -27,7 +28,7 @@ public class JDBCSingleThread extends EmployeeDriver implements Runnable {
 
 
             double startTime = System.nanoTime();
-            for(EmployeeInfo it : employeesUnique){  // Stores the values into the DB
+            for(EmployeeDAOInfo it : employeesUnique){  // Stores the values into the DB
                 preparedStatement.setInt(1,it.getEmployeeID());
                 preparedStatement.setString(2,it.getNamePrefix());
                 preparedStatement.setString(3,it.getFirstName());
