@@ -8,4 +8,8 @@ public interface EmployeeDAOInterface {
     public void getOldestEmployees();
 
     public void getRecentEmployees();
+
+    public void getFemaleEmployees();
+
+    public void getSalaryAbove5figures();
 }

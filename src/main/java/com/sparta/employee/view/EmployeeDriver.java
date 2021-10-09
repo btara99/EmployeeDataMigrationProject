@@ -76,31 +76,17 @@ public class EmployeeDriver {
             System.out.println("Time taken to populate database using multi threading: " + finalTime + " seconds");
 
 
-        //using lambda and stream to find salarays above 5 figures
-//        try (Stream<String> theStream = Files.lines(Paths.get("EmployeeRecordsLarge.csv"))) {
-//            theStream.filter(s -> s.split(",")[9].length()>5)
-//                    .forEach(s -> System.out.println(s));
-//
-//        } catch (IOException e) {
-//            //add log
-//            e.printStackTrace();
-//        }
 
-        //using lambda and stream to find female employees
-//        try (Stream<String> theStream = Files.lines(Paths.get("EmployeeRecordsLarge.csv"))) {
-//            theStream.filter(s -> s.split(",")[5].equals("F"))
-//                    .forEach(s -> System.out.println(s));
-//
-//        } catch (IOException e) {
-//            //add log
-//            e.printStackTrace();
-//        }
+
+
 
 
 //            employeeDAOInterface.get100Employees();
 //            employeeDAOInterface.getHighestSalary();
 //            employeeDAOInterface.getOldestEmployees();
 //            employeeDAOInterface.getRecentEmployees();
+//        employeeDAOInterface.getFemaleEmployees();
+//        employeeDAOInterface.getSalaryAbove5figures();
 
 
     }

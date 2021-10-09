@@ -2,7 +2,11 @@ package com.sparta.employee.model;
 
 import com.sparta.employee.controller.EmployeeDAOInterface;
 
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.sql.*;
+import java.util.stream.Stream;
 
 public class EmployeeDAOConcrete implements EmployeeDAOInterface {
 
@@ -104,6 +108,33 @@ public class EmployeeDAOConcrete implements EmployeeDAOInterface {
             throwable.printStackTrace();
             //add logger
 
+        }
+    }
+
+    @Override
+    public void getFemaleEmployees() {
+        //using lambda and stream to find female employees
+        try (Stream<String> theStream = Files.lines(Paths.get("EmployeeRecordsLarge.csv"))) {
+            theStream.filter(s -> s.split(",")[5].equals("F"))
+                    .forEach(s -> System.out.println(s));
+
+        } catch (IOException e) {
+            //add log
+            e.printStackTrace();
+        }
+
+    }
+
+    @Override
+    public void getSalaryAbove5figures() {
+        //using lambda and stream to find salary above 5 figures
+        try (Stream<String> theStream = Files.lines(Paths.get("EmployeeRecordsLarge.csv"))) {
+            theStream.filter(s -> s.split(",")[9].length()>5)
+                    .forEach(s -> System.out.println(s));
+
+        } catch (IOException e) {
+            //add log
+            e.printStackTrace();
         }
     }
 }
