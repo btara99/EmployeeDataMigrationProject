@@ -4,8 +4,6 @@ import com.sparta.employee.model.CleaningManager;
 import com.sparta.employee.view.EmployeeDriver;
 
 import java.sql.*;
-import java.util.ArrayList;
-import java.util.List;
 
 public class JDBCMangerMultiThread extends EmployeeDriver implements Runnable {
     CleaningManager cleaningManager = new CleaningManager();

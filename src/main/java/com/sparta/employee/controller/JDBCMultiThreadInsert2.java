@@ -1,4 +1,4 @@
-package com.sparta.employee;
+package com.sparta.employee.controller;
 
 import com.sparta.employee.controller.EmployeeInfo;
 import com.sparta.employee.view.EmployeeDriver;
@@ -6,13 +6,13 @@ import com.sparta.employee.view.EmployeeDriver;
 import java.sql.*;
 import java.util.ArrayList;
 
-public class JDBCMultiThread2 extends EmployeeDriver implements Runnable{
+public class JDBCMultiThreadInsert2 extends EmployeeDriver implements Runnable{
 
         public void dbInsertionThread2() {
 
             try (Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/myemployees", "root", "Password321@")) {
-                Statement statement = conn.createStatement();
                 conn.setAutoCommit(false); // grouping multiple subsequent statements in one
+                Statement statement = conn.createStatement();
                 PreparedStatement preparedStatement = conn.prepareStatement("INSERT INTO employees(EmpID,Name_Prefix,First_Name,Middle_Initial," +
                         "Last_Name,Gender,Email,DOB,DOJ,Salary)VALUES (?,?,?,?,?,?,?,?,?,?)");
 
@@ -35,7 +35,7 @@ public class JDBCMultiThread2 extends EmployeeDriver implements Runnable{
                 preparedStatement.close();
                 conn.commit();
                 statement.close(); //don't close then reopen
-                System.out.println("The rows have been populated successfully");
+                System.out.println("Thread 2 has populated its rows");
 
             } catch (SQLException throwables) {
                 throwables.printStackTrace();
@@ -44,9 +44,10 @@ public class JDBCMultiThread2 extends EmployeeDriver implements Runnable{
 
         }
 
-        @Override
-        public void run() {
-            dbInsertionThread2();
-        }
+
+    @Override
+    public void run() {
+        dbInsertionThread2();
+    }
 }
 

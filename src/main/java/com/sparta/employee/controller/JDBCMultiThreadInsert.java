@@ -33,7 +33,7 @@ public class JDBCMultiThreadInsert extends EmployeeDriver implements Runnable {
             conn.commit();
             statement.close();
 
-            System.out.println("The rows have been populated successfully");
+            System.out.println("Thread 1 has populated its rows");
 
         } catch (SQLException throwables) {
             throwables.printStackTrace();

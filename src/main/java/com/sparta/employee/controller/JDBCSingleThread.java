@@ -5,12 +5,13 @@ import com.sparta.employee.view.EmployeeDriver;
 
 import java.sql.*;
 
-public class JDBCManager extends EmployeeDriver implements Runnable {
+public class JDBCSingleThread extends EmployeeDriver implements Runnable {
 
     CleaningManager cleaningManager = new CleaningManager();
+
     public synchronized void databaseHandling(){
         try(Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/myemployees","root","Password321@") ){
-
+            conn.setAutoCommit(false); // grouping multiple subsequent statements in one
             Statement statement = conn.createStatement();
             statement.executeUpdate("DROP TABLE employees");  //DROPs table before any other statements
             statement.executeUpdate("CREATE TABLE employees" +
@@ -20,7 +21,6 @@ public class JDBCManager extends EmployeeDriver implements Runnable {
                     "Gender varchar(2),Email varchar(255)," +
                     "DOB Date, DOJ Date, Salary INT(255))");
 
-            conn.setAutoCommit(false); // grouping multiple subsequent statements in one
 
             PreparedStatement preparedStatement = conn.prepareStatement("INSERT INTO employees(EmpID,Name_Prefix,First_Name,Middle_Initial," +
                             "Last_Name,Gender,Email,DOB,DOJ,Salary)VALUES (?,?,?,?,?,?,?,?,?,?)");
@@ -48,7 +48,7 @@ public class JDBCManager extends EmployeeDriver implements Runnable {
             conn.commit();
 
             System.out.println("The rows have been populated successfully");
-            System.out.println("Time taken to populate database: " + finalTime + " seconds");
+            System.out.println("Time taken to populate database using a single thread: " + finalTime + " seconds");
 
 
         }catch(SQLException sqle){
