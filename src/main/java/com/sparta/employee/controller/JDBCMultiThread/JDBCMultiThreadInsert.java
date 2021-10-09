@@ -1,11 +1,14 @@
 package com.sparta.employee.controller.JDBCMultiThread;
 
+import com.sparta.employee.logging.LoggingManager;
 import com.sparta.employee.model.EmployeeDAOInfo;
 import com.sparta.employee.view.EmployeeDriver;
 
 import java.sql.*;
 
 public class JDBCMultiThreadInsert extends EmployeeDriver implements Runnable {
+
+    LoggingManager loggingManager = new LoggingManager();
 
     public void dbInsertionThread1() {
         try (Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/myemployees", "root", "Password321@")) {
@@ -36,6 +39,7 @@ public class JDBCMultiThreadInsert extends EmployeeDriver implements Runnable {
             System.out.println("Thread 1 has populated its rows");
 
         } catch (SQLException throwables) {
+            loggingManager.sqlExceptionLog(throwables);
             throwables.printStackTrace();
         }
 

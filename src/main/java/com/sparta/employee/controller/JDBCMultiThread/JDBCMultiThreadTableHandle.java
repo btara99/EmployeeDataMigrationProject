@@ -1,12 +1,12 @@
 package com.sparta.employee.controller.JDBCMultiThread;
 
-import com.sparta.employee.model.CleaningManager;
+import com.sparta.employee.logging.LoggingManager;
 import com.sparta.employee.view.EmployeeDriver;
 
 import java.sql.*;
 
 public class JDBCMultiThreadTableHandle extends EmployeeDriver implements Runnable {
-    CleaningManager cleaningManager = new CleaningManager();
+    LoggingManager loggingManager = new LoggingManager();
 
     public synchronized void databaseHandling() {
         try (Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/myemployees", "root", "Password321@")) {
@@ -23,7 +23,7 @@ public class JDBCMultiThreadTableHandle extends EmployeeDriver implements Runnab
 
         } catch (SQLException sqle) {
             sqle.printStackTrace();
-            //add logger
+            loggingManager.sqlExceptionLog(sqle);
             System.out.println("SQL exception");
         }
     }

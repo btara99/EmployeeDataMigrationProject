@@ -78,9 +78,6 @@ public class EmployeeDriver {
 
 
 
-
-
-
 //            employeeDAOInterface.get100Employees();
 //            employeeDAOInterface.getHighestSalary();
 //            employeeDAOInterface.getOldestEmployees();

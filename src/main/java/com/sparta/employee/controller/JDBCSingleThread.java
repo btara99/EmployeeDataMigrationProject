@@ -1,5 +1,6 @@
 package com.sparta.employee.controller;
 
+import com.sparta.employee.logging.LoggingManager;
 import com.sparta.employee.model.CleaningManager;
 import com.sparta.employee.model.EmployeeDAOInfo;
 import com.sparta.employee.view.EmployeeDriver;
@@ -8,6 +9,7 @@ import java.sql.*;
 
 public class JDBCSingleThread extends EmployeeDriver implements Runnable {
 
+    LoggingManager loggingManager = new LoggingManager();
     CleaningManager cleaningManager = new CleaningManager();
 
     public synchronized void databaseHandling(){
@@ -50,11 +52,11 @@ public class JDBCSingleThread extends EmployeeDriver implements Runnable {
 
             System.out.println("The rows have been populated successfully");
             System.out.println("Time taken to populate database using a single thread: " + finalTime + " seconds");
-
+            loggingManager.timeLog(finalTime);
 
         }catch(SQLException sqle){
             sqle.printStackTrace();
-            //add logger
+            loggingManager.sqlExceptionLog(sqle);
             System.out.println("SQL exception");
         }
     }

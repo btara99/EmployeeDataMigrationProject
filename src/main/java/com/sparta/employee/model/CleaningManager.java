@@ -1,5 +1,6 @@
 package com.sparta.employee.model;
 
+import com.sparta.employee.logging.LoggingManager;
 import com.sparta.employee.view.EmployeeDriver;
 
 import java.io.BufferedReader;
@@ -8,7 +9,7 @@ import java.io.FileReader;
 import java.io.IOException;
 
 public class CleaningManager extends EmployeeDriver implements Runnable {
-
+    LoggingManager loggingManager = new LoggingManager();
     String line = null; // initiates line
 
     public synchronized void fileCleaner(){
@@ -28,8 +29,8 @@ public class CleaningManager extends EmployeeDriver implements Runnable {
                     }
 
                 } catch (Exception exception) {
-                    //exception.printStackTrace();
-                    //ADD LOGGER HERE
+                    exception.printStackTrace();
+                    loggingManager.normalException(exception);
                     System.out.println("Employee was not checked " + line);
                 }
             }
@@ -37,16 +38,16 @@ public class CleaningManager extends EmployeeDriver implements Runnable {
             System.out.println("The number of unique entries: "+ employeesUnique.size());
             System.out.println("The number of duplicate entries: "+ employeesDuplicates.size());
             System.out.println("Time Taken to process: " + finalTime + " seconds");
-            //ADD LOGGER HERE
+            loggingManager.timeLogForCleaning(finalTime);
 
 
         } catch (FileNotFoundException fe){
             fe.printStackTrace();
-            //add logger here
+            loggingManager.fileNotFound(fe);
             System.out.println("File is not found");
         } catch (IOException e) {
             e.printStackTrace();
-            //add logger here
+            loggingManager.ioLog(e); // logging
             System.out.println("Input output exception");
 
         }

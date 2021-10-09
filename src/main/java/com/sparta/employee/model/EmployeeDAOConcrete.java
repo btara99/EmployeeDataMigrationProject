@@ -1,6 +1,7 @@
 package com.sparta.employee.model;
 
 import com.sparta.employee.controller.EmployeeDAOInterface;
+import com.sparta.employee.logging.LoggingManager;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -9,6 +10,8 @@ import java.sql.*;
 import java.util.stream.Stream;
 
 public class EmployeeDAOConcrete implements EmployeeDAOInterface {
+
+    LoggingManager loggingManager = new LoggingManager();
 
     @Override
     public void get100Employees() {
@@ -33,7 +36,7 @@ public class EmployeeDAOConcrete implements EmployeeDAOInterface {
             statement.close();
         } catch (SQLException throwable) {
             throwable.printStackTrace();
-            //add logger
+            loggingManager.sqlExceptionLog(throwable); // logging
 
         }
     }
@@ -55,7 +58,7 @@ public class EmployeeDAOConcrete implements EmployeeDAOInterface {
             statement.close();
         } catch (SQLException throwable) {
             throwable.printStackTrace();
-            //add logger
+            loggingManager.sqlExceptionLog(throwable); // logging
 
         }
     }
@@ -81,7 +84,7 @@ public class EmployeeDAOConcrete implements EmployeeDAOInterface {
             statement.close();
         } catch (SQLException throwable) {
             throwable.printStackTrace();
-            //add logger
+            loggingManager.sqlExceptionLog(throwable); // logging
 
         }
     }
@@ -106,7 +109,7 @@ public class EmployeeDAOConcrete implements EmployeeDAOInterface {
             statement.close();
         } catch (SQLException throwable) {
             throwable.printStackTrace();
-            //add logger
+            loggingManager.sqlExceptionLog(throwable); // logging
 
         }
     }
@@ -119,8 +122,8 @@ public class EmployeeDAOConcrete implements EmployeeDAOInterface {
                     .forEach(s -> System.out.println(s));
 
         } catch (IOException e) {
-            //add log
             e.printStackTrace();
+            loggingManager.ioLog(e); // logging
         }
 
     }
@@ -133,8 +136,8 @@ public class EmployeeDAOConcrete implements EmployeeDAOInterface {
                     .forEach(s -> System.out.println(s));
 
         } catch (IOException e) {
-            //add log
             e.printStackTrace();
+            loggingManager.ioLog(e); // logging
         }
     }
 }
