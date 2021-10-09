@@ -1,8 +1,8 @@
-package com.sparta.employee.controller;
+package com.sparta.employee.model;
 
+import com.sparta.employee.controller.EmployeeDAOInfo;
 import com.sparta.employee.logging.LoggingManager;
 import com.sparta.employee.model.CleaningManager;
-import com.sparta.employee.model.EmployeeDAOInfo;
 import com.sparta.employee.view.EmployeeDriver;
 
 import java.sql.*;

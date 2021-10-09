@@ -1,13 +1,12 @@
 package com.sparta.employee.view;
 
 import com.sparta.employee.controller.*;
-import com.sparta.employee.controller.JDBCMultiThread.JDBCMultiThreadInsert;
-import com.sparta.employee.controller.JDBCMultiThread.JDBCMultiThreadInsert2;
-import com.sparta.employee.controller.JDBCMultiThread.JDBCMultiThreadTableHandle;
+import com.sparta.employee.model.JDBCMultiThread.*;
 import com.sparta.employee.logging.LoggingManager;
 import com.sparta.employee.model.CleaningManager;
 import com.sparta.employee.model.EmployeeDAOConcrete;
-import com.sparta.employee.model.EmployeeDAOInfo;
+import com.sparta.employee.controller.EmployeeDAOInfo;
+import com.sparta.employee.model.JDBCSingleThread;
 
 import java.util.ArrayList;
 import java.util.HashSet;

@@ -1,5 +1,7 @@
 package com.sparta.employee.model;
 
+import com.sparta.employee.controller.EmployeeDAOInfo;
+
 import java.sql.Date;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;

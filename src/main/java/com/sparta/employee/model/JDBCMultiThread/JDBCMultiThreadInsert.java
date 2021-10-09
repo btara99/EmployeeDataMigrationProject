@@ -1,7 +1,7 @@
-package com.sparta.employee.controller.JDBCMultiThread;
+package com.sparta.employee.model.JDBCMultiThread;
 
 import com.sparta.employee.logging.LoggingManager;
-import com.sparta.employee.model.EmployeeDAOInfo;
+import com.sparta.employee.controller.EmployeeDAOInfo;
 import com.sparta.employee.view.EmployeeDriver;
 
 import java.sql.*;
@@ -38,9 +38,9 @@ public class JDBCMultiThreadInsert extends EmployeeDriver implements Runnable {
 
             System.out.println("Thread 1 has populated its rows");
 
-        } catch (SQLException throwables) {
-            loggingManager.sqlExceptionLog(throwables);
-            throwables.printStackTrace();
+        } catch (SQLException throwable) {
+            loggingManager.sqlExceptionLog(throwable);
+            throwable.printStackTrace();
         }
 
 

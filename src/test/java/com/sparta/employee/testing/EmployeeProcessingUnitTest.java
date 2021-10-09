@@ -8,7 +8,7 @@ import java.text.ParseException;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-public class CleaningManagerTest {
+public class EmployeeProcessingUnitTest {
 
     @Test
     public void dateFormatTest() throws ParseException {

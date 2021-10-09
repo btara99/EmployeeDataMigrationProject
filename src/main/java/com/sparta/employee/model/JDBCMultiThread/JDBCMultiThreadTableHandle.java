@@ -1,4 +1,4 @@
-package com.sparta.employee.controller.JDBCMultiThread;
+package com.sparta.employee.model.JDBCMultiThread;
 
 import com.sparta.employee.logging.LoggingManager;
 import com.sparta.employee.view.EmployeeDriver;

@@ -1,5 +1,6 @@
 package com.sparta.employee.model;
 
+import com.sparta.employee.controller.EmployeeDAOInfo;
 import com.sparta.employee.logging.LoggingManager;
 import com.sparta.employee.view.EmployeeDriver;
 
