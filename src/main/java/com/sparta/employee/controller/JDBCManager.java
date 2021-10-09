@@ -44,8 +44,8 @@ public class JDBCManager extends EmployeeDriver implements Runnable {
             }
             double finalTime = (System.nanoTime() - startTime)/1000000000;
             preparedStatement.close();
-            conn.commit();
             statement.close(); //don't close then reopen
+            conn.commit();
 
             System.out.println("The rows have been populated successfully");
             System.out.println("Time taken to populate database: " + finalTime + " seconds");
@@ -53,9 +53,12 @@ public class JDBCManager extends EmployeeDriver implements Runnable {
 
         }catch(SQLException sqle){
             sqle.printStackTrace();
+            //add logger
             System.out.println("SQL exception");
         }
     }
+
+
 
     @Override
     public void run() {
