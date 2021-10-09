@@ -33,7 +33,7 @@
 ### Project Instructions
 - First make sure that the connection is set to mySQL as seen in the image below and
 please use your information such as password instead
-![mySQL](./readmeImages/imageForMysql.png)
+![mySQL](./readmeImages/mysql.png)
 - next make sure to either create a scheme in mySql workbench called "myemployees"
 or you can rename the myemployees to another scheme instead
 - When you run the program you will be prompted to pick either single threading or multi threading
@@ -105,9 +105,9 @@ Also to note why I choose 2 threads for multi threading was mainly because I wou
 Overall this project has taught me a lot of new skills and concepts which resulted in a enjoyable but also challenging project yet delivers a high quality project.
 
 ## Comparison between the threads
-![Single Thread](./readmeImages/singleThreadTime.png)
+![Single Thread](./readmeImages/singlethread.png)
 
-![MultiThread](./readmeImages/MultiThreading.png)
+![MultiThread](./readmeImages/multithread.png)
 
 
 ## Main Java skills demonstrated (outside all the basics)
