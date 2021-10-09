@@ -8,8 +8,13 @@ import com.sparta.employee.model.CleaningManager;
 import com.sparta.employee.model.EmployeeDAOConcrete;
 import com.sparta.employee.model.EmployeeDAOInfo;
 
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.function.Consumer;
+import java.util.stream.Stream;
 
 
 public class EmployeeDriver {
@@ -18,6 +23,14 @@ public class EmployeeDriver {
     public static ArrayList<EmployeeDAOInfo> employeesUniqueSplit2 = new ArrayList<>(); // Arraylist to store other half of the records
     public static ArrayList<EmployeeDAOInfo> employeesDuplicates = new ArrayList<>(); // Arraylist to store all duplicate records
     public static HashSet<Integer> idCheck = new HashSet<>(); // Hashset cannot contain dupes
+
+    private static class MyPrinter implements Consumer<String> {
+
+        @Override
+        public void accept(String s) {
+            System.out.println(s);
+        }
+    }
 
     public static void main(String[] args) throws InterruptedException {
 
@@ -61,6 +74,28 @@ public class EmployeeDriver {
             multiThreadInsertion2.join();
             double finalTime = (System.nanoTime() - startTime) / 1000000000; //ends the timer just inserting into database
             System.out.println("Time taken to populate database using multi threading: " + finalTime + " seconds");
+
+
+        //using lambda and stream to find salarays above 5 figures
+//        try (Stream<String> theStream = Files.lines(Paths.get("EmployeeRecordsLarge.csv"))) {
+//            theStream.filter(s -> s.split(",")[9].length()>5)
+//                    .forEach(s -> System.out.println(s));
+//
+//        } catch (IOException e) {
+//            //add log
+//            e.printStackTrace();
+//        }
+
+        //using lambda and stream to find female employees
+//        try (Stream<String> theStream = Files.lines(Paths.get("EmployeeRecordsLarge.csv"))) {
+//            theStream.filter(s -> s.split(",")[5].equals("F"))
+//                    .forEach(s -> System.out.println(s));
+//
+//        } catch (IOException e) {
+//            //add log
+//            e.printStackTrace();
+//        }
+
 
 //            employeeDAOInterface.get100Employees();
 //            employeeDAOInterface.getHighestSalary();

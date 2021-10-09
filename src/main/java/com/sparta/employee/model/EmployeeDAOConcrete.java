@@ -12,7 +12,7 @@ public class EmployeeDAOConcrete implements EmployeeDAOInterface {
             Statement statement = conn.createStatement();
             ResultSet rs = statement.executeQuery("SELECT * FROM employees LIMIT 100");
             while(rs.next()){
-                System.out.println("Employee ID: "+ rs.getString(1)+
+                System.out.println("Employee ID: "+ rs.getString(1)+ " "+
                         "Name Prefix: "+ rs.getString(2)+ " " +
                         "First name: "+ rs.getString(3)+ " " +
                         "Middle Intial: "+ rs.getString(4)+ " " +
@@ -40,15 +40,9 @@ public class EmployeeDAOConcrete implements EmployeeDAOInterface {
             Statement statement = conn.createStatement();
             ResultSet rs = statement.executeQuery("SELECT * FROM employees ORDER BY Salary DESC LIMIT 10");
             while(rs.next()){
-                System.out.println("Employee ID: "+ rs.getString(1)+
-                        "Name Prefix: "+ rs.getString(2)+ " " +
+                System.out.println("Employee ID: "+ rs.getString(1)+ " "+
                         "First name: "+ rs.getString(3)+ " " +
-                        "Middle Intial: "+ rs.getString(4)+ " " +
                         "Last name: "+ rs.getString(5)+" " +
-                        "Gender: "+ rs.getString(6)+ " " +
-                        "Email: "+ rs.getString(7)+ " " +
-                        "DOB: "+ rs.getString(8)+ " " +
-                        "DOJ: "+ rs.getString(9)+ " " +
                         "Salary: "+ rs.getString(10)
                 );
             }
@@ -68,16 +62,14 @@ public class EmployeeDAOConcrete implements EmployeeDAOInterface {
             Statement statement = conn.createStatement();
             ResultSet rs = statement.executeQuery("SELECT * FROM employees ORDER BY DOB DESC LIMIT 10");
             while(rs.next()){
-                System.out.println("Employee ID: "+ rs.getString(1)+
+                System.out.println("Employee ID: "+ rs.getString(1)+ " "+
                         "Name Prefix: "+ rs.getString(2)+ " " +
                         "First name: "+ rs.getString(3)+ " " +
-                        "Middle Intial: "+ rs.getString(4)+ " " +
                         "Last name: "+ rs.getString(5)+" " +
                         "Gender: "+ rs.getString(6)+ " " +
-                        "Email: "+ rs.getString(7)+ " " +
                         "DOB: "+ rs.getString(8)+ " " +
-                        "DOJ: "+ rs.getString(9)+ " " +
-                        "Salary: "+ rs.getString(10)
+                        "DOJ: "+ rs.getString(9)+ " "
+
                 );
             }
 
@@ -96,16 +88,13 @@ public class EmployeeDAOConcrete implements EmployeeDAOInterface {
             Statement statement = conn.createStatement();
             ResultSet rs = statement.executeQuery("SELECT * FROM employees ORDER BY DOJ DESC LIMIT 10");
             while(rs.next()){
-                System.out.println("Employee ID: "+ rs.getString(1)+
+                System.out.println("Employee ID: "+ rs.getString(1)+ " "+
                         "Name Prefix: "+ rs.getString(2)+ " " +
                         "First name: "+ rs.getString(3)+ " " +
-                        "Middle Intial: "+ rs.getString(4)+ " " +
                         "Last name: "+ rs.getString(5)+" " +
                         "Gender: "+ rs.getString(6)+ " " +
-                        "Email: "+ rs.getString(7)+ " " +
                         "DOB: "+ rs.getString(8)+ " " +
-                        "DOJ: "+ rs.getString(9)+ " " +
-                        "Salary: "+ rs.getString(10)
+                        "DOJ: "+ rs.getString(9)+ " "
                 );
             }
 
