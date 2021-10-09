@@ -48,7 +48,7 @@ public class JDBCManager extends EmployeeDriver implements Runnable {
             statement.close(); //don't close then reopen
 
             System.out.println("The rows have been populated successfully");
-            System.out.println("Time taken: " + finalTime + " seconds");
+            System.out.println("Time taken to populate database: " + finalTime + " seconds");
 
 
         }catch(SQLException sqle){

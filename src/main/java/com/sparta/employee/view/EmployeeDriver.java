@@ -8,9 +8,9 @@ import java.util.ArrayList;
 import java.util.HashSet;
 
 public class EmployeeDriver {
-    public static ArrayList<EmployeeInfo> employeesUnique = new ArrayList<EmployeeInfo>(); // Arraylist to store all unique records
-    public static ArrayList<EmployeeInfo> employeesDuplicates = new ArrayList<EmployeeInfo>(); // Arraylist to store all duplicate records
-    public static HashSet<Integer> idCheck = new HashSet<Integer>(); // Hashset cannot contain dupes
+    public static ArrayList<EmployeeInfo> employeesUnique = new ArrayList<>(); // Arraylist to store all unique records
+    public static ArrayList<EmployeeInfo> employeesDuplicates = new ArrayList<>(); // Arraylist to store all duplicate records
+    public static HashSet<Integer> idCheck = new HashSet<>(); // Hashset cannot contain dupes
 
     public static void main(String[] args) {
 
